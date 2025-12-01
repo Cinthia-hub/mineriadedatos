@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/png" href="./icono.png" />
+  <title>Top películas — IMDB</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1> <img src="./logo.png" alt="Logo de IMDB" style="height:40px; vertical-align:middle; margin-right:8px;" />
+      IMDB — Películas y series</h1>
+    <div class="controls">
+      <input id="search" placeholder="Buscar por título o director..." />
+      <select id="genre-filter">
+        <option value="">Todos los géneros</option>
+      </select>
+      <select id="sort">
+        <option value="rating_desc">Rating (mayor → menor)</option>
+        <option value="rating_asc">Rating (menor → mayor)</option>
+        <option value="year_desc">Año (recientes)</option>
+        <option value="year_asc">Año (antiguos)</option>
+      </select>
+      <!-- Botón para descargar el PDF generado por el script de modelos -->
+      <a id="download-pdf" class="pdf-btn" href="site_data/model_results.pdf" download>Descargar grafos</a>
+    </div>
+  </header>
+
+  <!-- Banner de notificaciones no bloqueante -->
+  <div id="global-notice" class="notice hidden" role="status" aria-live="polite"></div>
+
+  <main>
+    <section id="grid" class="grid"></section>
+    <div id="pagination" class="pagination"></div>
+  </main>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-content" role="document" aria-labelledby="modal-title">
+      <button id="modal-close" class="modal-close" aria-label="Cerrar">×</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Confirm / Warning modal (custom) -->
+  <div id="confirm-modal" class="confirm-modal hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="confirm-title" aria-describedby="confirm-message">
+    <div class="confirm-backdrop" id="confirm-backdrop"></div>
+    <div class="confirm-content" role="document">
+      <div class="confirm-icon" aria-hidden="true">!</div>
+      <div class="confirm-body">
+        <h3 id="confirm-title" class="confirm-title">Confirmar eliminación</h3>
+        <div id="confirm-message" class="confirm-message">¿Eliminar esta reseña? Esta acción no se puede deshacer.</div>
+        <div class="confirm-actions">
+          <button id="confirm-cancel" class="btn-cancel">Cancelar</button>
+          <button id="confirm-ok" class="btn-confirm-delete">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <small>Aplicación: De Cinthia Camila Bravo Marmolejo.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
