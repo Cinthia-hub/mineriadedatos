@@ -1,0 +1,22 @@
+# Dependencias sugeridas para ejecutar `python server.py` y trabajar con análisis de datos.
+# Ajusta estas dependencias según el framework real que use tu server.py (Flask, FastAPI, Streamlit, etc.)
+flask>=2.0            # servidor web simple (si usas Flask)
+gunicorn>=20.0        # recomendado para despliegue (opcional)
+pandas>=1.5
+numpy>=1.24
+scikit-learn>=1.2
+matplotlib>=3.6
+seaborn>=0.12
+scipy>=1.10
+joblib>=1.2
+python-dotenv>=1.0    # cargar variables de entorno desde .env
+requests>=2.28
+
+# Herramientas de desarrollo / notebooks (opcional)
+jupyterlab>=3.0
+
+# Paquetes opcionales (descomenta si los necesitas)
+# fastapi>=0.95.0
+# uvicorn[standard]>=0.18.0
+# streamlit>=1.20
+# plotly>=5.0
