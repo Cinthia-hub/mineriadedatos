@@ -241,7 +241,17 @@ fetchData().then(d => {
         try {
           const id = r.id != null ? Number(r.id) : (r.db_rowid != null ? Number(r.db_rowid) : null);
           const ts = r.posted || r.ts || r.posted_at || new Date().toISOString();
-          const item = { id: id || Date.now() + Math.floor(Math.random()*1000), author: r.author || r.Author || "Anon", rating: (r.rating != null ? Number(r.rating) : null), review: r.review || r.REVIEW || "", ts: ts, db_rowid: id || r.db_rowid || null };
+          const item = {
+            id: id || Date.now() + Math.floor(Math.random()*1000),
+            author: r.author || r.Author || "Anon",
+            rating: (r.rating != null ? Number(r.rating) : null),
+            review: r.review || r.REVIEW || "",
+            ts: ts,
+            db_rowid: id || r.db_rowid || null,
+            // New: include sentiment fields if server provided them
+            sentiment: r.sentiment || null,
+            sentiment_compound: (r.sentiment_compound != null ? Number(r.sentiment_compound) : null)
+          };
           if (!userReviews[key].some(x => String(x.id) === String(item.id))) userReviews[key].push(item);
         } catch(e){ console.warn("Error importando reseña:", e); }
       });
@@ -392,6 +402,9 @@ function importServerReviewsForMovie(m) {
         const rating = (r.rating != null ? Number(r.rating) : null);
         const reviewText = r.review || r.REVIEW || "";
         const posted = r.posted || r.ts || new Date().toISOString();
+        // sentiment fields (if present on server JSON)
+        const sentiment = r.sentiment || null;
+        const sentiment_compound = (r.sentiment_compound != null ? Number(r.sentiment_compound) : null);
         // Prefer match by db_rowid then id
         let found = null;
         if (dbid && existingByDb.has(dbid)) found = existingByDb.get(dbid);
@@ -406,6 +419,9 @@ function importServerReviewsForMovie(m) {
           // ensure db_rowid/id kept
           if (dbid) found.db_rowid = dbid;
           if (sid) found.id = sid;
+          // update sentiment if available
+          if (sentiment) found.sentiment = sentiment;
+          if (sentiment_compound != null) found.sentiment_compound = sentiment_compound;
         } else {
           // insertar nuevo al final (o al inicio?)
           const newItem = {
@@ -414,7 +430,9 @@ function importServerReviewsForMovie(m) {
             author,
             rating,
             review: reviewText,
-            ts: posted
+            ts: posted,
+            sentiment,
+            sentiment_compound
           };
           userReviews[key].push(newItem);
           imported++;
@@ -475,11 +493,29 @@ function openModalWithMovie(m){
   posTitle.textContent = "Reseña positiva (dataset)";
   posTitle.style.fontWeight = "700";
   posHeader.appendChild(posTitle);
+  const posTitle2 = document.createElement("div");
+  posTitle2.style.display = "flex";
+  posHeader.appendChild(posTitle2);
   if (m.positive_review && m.positive_review.rating != null) {
     const pr = document.createElement("div");
     pr.className = "review-rating";
     pr.textContent = String(m.positive_review.rating);
-    posHeader.appendChild(pr);
+    posTitle2.appendChild(pr);
+  }
+  // show sentiment for dataset positive_review if present
+  if (m.positive_review && m.positive_review.sentiment) {
+    const sb = document.createElement("span");
+    sb.textContent = String(m.positive_review.sentiment);
+    sb.title = (m.positive_review.sentiment_compound != null ? `score: ${m.positive_review.sentiment_compound}` : "");
+    sb.style.marginLeft = "8px";
+    sb.style.padding = "2px 6px";
+    sb.style.borderRadius = "10px";
+    sb.style.color = "#fff";
+    const s = m.positive_review.sentiment;
+    if (s === "positive") sb.style.background = "#2ca02c";
+    else if (s === "negative") sb.style.background = "#d62728";
+    else sb.style.background = "#7f7f7f";
+    posTitle2.appendChild(sb);
   }
   posBlock.appendChild(posHeader);
   if (m.positive_review) {
@@ -508,11 +544,29 @@ function openModalWithMovie(m){
   negTitle.textContent = "Reseña negativa (dataset)";
   negTitle.style.fontWeight = "700";
   negHeader.appendChild(negTitle);
+  const negTitle2 = document.createElement("div");
+  negTitle2.style.display = "flex";
+  negHeader.appendChild(negTitle2);
   if (m.negative_review && m.negative_review.rating != null) {
     const nr = document.createElement("div");
     nr.className = "review-rating";
     nr.textContent = String(m.negative_review.rating);
-    negHeader.appendChild(nr);
+    negTitle2.appendChild(nr);
+  }
+  // show sentiment for dataset negative_review if present
+  if (m.negative_review && m.negative_review.sentiment) {
+    const sb = document.createElement("span");
+    sb.textContent = String(m.negative_review.sentiment);
+    sb.title = (m.negative_review.sentiment_compound != null ? `score: ${m.negative_review.sentiment_compound}` : "");
+    sb.style.marginLeft = "8px";
+    sb.style.padding = "2px 6px";
+    sb.style.borderRadius = "10px";
+    sb.style.color = "#fff";
+    const s = m.negative_review.sentiment;
+    if (s === "positive") sb.style.background = "#2ca02c";
+    else if (s === "negative") sb.style.background = "#d62728";
+    else sb.style.background = "#7f7f7f";
+    negTitle2.appendChild(sb);
   }
   negBlock.appendChild(negHeader);
   if (m.negative_review) {
@@ -802,6 +856,23 @@ function renderUserReviewItem(userKey, r, movie_index){
   leftTitle.style.fontWeight="600"; header.appendChild(leftTitle);
   const ratingBadge = document.createElement("div"); ratingBadge.className="review-rating"; ratingBadge.textContent = `${r.rating}`;
 
+  // sentiment badge: if available show colored pill
+  let sentimentBadge = null;
+  if (r.sentiment) {
+    sentimentBadge = document.createElement("span");
+    sentimentBadge.textContent = String(r.sentiment);
+    sentimentBadge.title = (r.sentiment_compound != null ? `score: ${r.sentiment_compound}` : "");
+    sentimentBadge.style.marginLeft = "8px";
+    sentimentBadge.style.padding = "2px 6px";
+    sentimentBadge.style.borderRadius = "10px";
+    sentimentBadge.style.color = "#fff";
+    sentimentBadge.style.fontSize = "12px";
+    const s = r.sentiment;
+    if (s === "positive") sentimentBadge.style.background = "#2ca02c";
+    else if (s === "negative") sentimentBadge.style.background = "#d62728";
+    else sentimentBadge.style.background = "#7f7f7f";
+  }
+
   // Edit button: populate the same form (no new form)
   const editBtn = document.createElement("button"); editBtn.className="user-review-edit"; editBtn.textContent="Editar"; editBtn.style.background="transparent"; editBtn.style.border="0"; editBtn.style.color="var(--muted)"; editBtn.style.cursor="pointer"; editBtn.style.marginRight="8px";
   editBtn.addEventListener("click", () => {
@@ -860,6 +931,7 @@ function renderUserReviewItem(userKey, r, movie_index){
 
   const rightContainer = document.createElement("div"); rightContainer.style.display="flex"; rightContainer.style.alignItems="center";
   rightContainer.appendChild(editBtn); rightContainer.appendChild(delBtn); rightContainer.appendChild(ratingBadge);
+  if (sentimentBadge) rightContainer.appendChild(sentimentBadge);
   header.appendChild(rightContainer); block.appendChild(header);
   const body = document.createElement("div"); body.className="review-body"; body.textContent = r.review; block.appendChild(body);
   return block;

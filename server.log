@@ -2081,3 +2081,190 @@ PDF with results written to: C:\Users\camib\Downloads\Ugarte Mineria de Datos\pr
 2025-11-30 19:12:33,875 INFO PDF regeneration finished (flag updated).
 2025-11-30 19:12:34,260 INFO 127.0.0.1 - - [30/Nov/2025 19:12:34] "GET /api/pdf_status HTTP/1.1" 200 -
 2025-11-30 19:14:53,004 INFO 127.0.0.1 - - [30/Nov/2025 19:14:53] "GET /site_data/model_results.pdf?v=2025-12-01T01:12:33.229439 HTTP/1.1" 200 -
+2025-11-30 20:45:11,288 INFO Server starting. Static files served from: C:\Users\camib\Downloads\Ugarte Mineria de Datos\proyecto final
+2025-11-30 20:45:11,289 INFO PDF exists and FORCE_REGEN_ON_START not set: not regenerating on startup.
+2025-11-30 20:45:11,326 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.68.112:5000
+2025-11-30 20:45:11,326 INFO [33mPress CTRL+C to quit[0m
+2025-12-01 17:11:44,868 INFO Server starting. Static files served from: C:\Users\camib\Downloads\Ugarte Mineria de Datos\proyecto final
+2025-12-01 17:11:44,869 INFO PDF exists and FORCE_REGEN_ON_START not set: not regenerating on startup.
+2025-12-01 17:11:44,888 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.68.111:5000
+2025-12-01 17:11:44,888 INFO [33mPress CTRL+C to quit[0m
+2025-12-01 17:12:06,703 INFO 127.0.0.1 - - [01/Dec/2025 17:12:06] "GET / HTTP/1.1" 200 -
+2025-12-01 17:12:06,722 INFO 127.0.0.1 - - [01/Dec/2025 17:12:06] "GET /styles.css HTTP/1.1" 200 -
+2025-12-01 17:12:06,730 INFO 127.0.0.1 - - [01/Dec/2025 17:12:06] "GET /logo.png HTTP/1.1" 200 -
+2025-12-01 17:12:06,732 INFO 127.0.0.1 - - [01/Dec/2025 17:12:06] "GET /app.js HTTP/1.1" 200 -
+2025-12-01 17:12:06,795 INFO 127.0.0.1 - - [01/Dec/2025 17:12:06] "GET /site_data/movies_with_reviews.json HTTP/1.1" 200 -
+2025-12-01 17:12:06,971 INFO 127.0.0.1 - - [01/Dec/2025 17:12:06] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:29:04,219 INFO 127.0.0.1 - - [01/Dec/2025 17:29:04] "GET / HTTP/1.1" 200 -
+2025-12-01 17:29:04,267 INFO 127.0.0.1 - - [01/Dec/2025 17:29:04] "GET /styles.css HTTP/1.1" 200 -
+2025-12-01 17:29:04,267 INFO 127.0.0.1 - - [01/Dec/2025 17:29:04] "GET /logo.png HTTP/1.1" 200 -
+2025-12-01 17:29:04,268 INFO 127.0.0.1 - - [01/Dec/2025 17:29:04] "GET /app.js HTTP/1.1" 200 -
+2025-12-01 17:29:04,280 INFO 127.0.0.1 - - [01/Dec/2025 17:29:04] "GET /site_data/movies_with_reviews.json HTTP/1.1" 200 -
+2025-12-01 17:29:04,842 INFO 127.0.0.1 - - [01/Dec/2025 17:29:04] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:29:36,533 INFO Server starting. Static files served from: C:\Users\camib\Downloads\Ugarte Mineria de Datos\proyecto final
+2025-12-01 17:29:36,534 INFO PDF exists and FORCE_REGEN_ON_START not set: not regenerating on startup.
+2025-12-01 17:29:36,552 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.68.111:5000
+2025-12-01 17:29:36,552 INFO [33mPress CTRL+C to quit[0m
+2025-12-01 17:29:41,117 INFO 127.0.0.1 - - [01/Dec/2025 17:29:41] "[36mGET / HTTP/1.1[0m" 304 -
+2025-12-01 17:29:41,133 INFO 127.0.0.1 - - [01/Dec/2025 17:29:41] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-12-01 17:29:41,141 INFO 127.0.0.1 - - [01/Dec/2025 17:29:41] "[36mGET /app.js HTTP/1.1[0m" 304 -
+2025-12-01 17:29:41,142 INFO 127.0.0.1 - - [01/Dec/2025 17:29:41] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-12-01 17:29:41,165 INFO 127.0.0.1 - - [01/Dec/2025 17:29:41] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 17:29:41,252 INFO 127.0.0.1 - - [01/Dec/2025 17:29:41] "GET /icono.png HTTP/1.1" 200 -
+2025-12-01 17:29:41,253 INFO 127.0.0.1 - - [01/Dec/2025 17:29:41] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:29:46,535 INFO 127.0.0.1 - - [01/Dec/2025 17:29:46] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 17:29:59,320 INFO 127.0.0.1 - - [01/Dec/2025 17:29:59] "GET /site_data/model_results.pdf?v=2025-12-01T01:12:33.229439 HTTP/1.1" 200 -
+2025-12-01 17:30:21,590 INFO 127.0.0.1 - - [01/Dec/2025 17:30:21] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 17:30:29,452 INFO 127.0.0.1 - - [01/Dec/2025 17:30:29] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 17:30:37,116 INFO POST /api/edit_review - movie_index=2 review_id=5469 db_rowid=5469
+2025-12-01 17:30:37,254 INFO Updated review id=5469 in JSON movies index=2, path=site_data\movies_with_reviews.json
+2025-12-01 17:30:37,263 INFO No hay regeneración en curso: se iniciará una nueva tras edición.
+2025-12-01 17:30:37,264 INFO 127.0.0.1 - - [01/Dec/2025 17:30:37] "POST /api/edit_review HTTP/1.1" 200 -
+2025-12-01 17:30:37,264 INFO Starting PDF regeneration (subprocess thread).
+2025-12-01 17:30:37,265 INFO Launching subprocess: C:\Users\camib\AppData\Local\Programs\Python\Python313\python.exe grafos.py
+2025-12-01 17:30:39,277 INFO 127.0.0.1 - - [01/Dec/2025 17:30:39] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:30:41,271 INFO 127.0.0.1 - - [01/Dec/2025 17:30:41] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:30:43,276 INFO 127.0.0.1 - - [01/Dec/2025 17:30:43] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:30:45,272 INFO 127.0.0.1 - - [01/Dec/2025 17:30:45] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:30:47,276 INFO 127.0.0.1 - - [01/Dec/2025 17:30:47] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:30:49,277 INFO 127.0.0.1 - - [01/Dec/2025 17:30:49] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:30:51,278 INFO 127.0.0.1 - - [01/Dec/2025 17:30:51] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:30:53,271 INFO 127.0.0.1 - - [01/Dec/2025 17:30:53] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:30:55,278 INFO 127.0.0.1 - - [01/Dec/2025 17:30:55] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:30:57,619 INFO 127.0.0.1 - - [01/Dec/2025 17:30:57] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:30:59,620 INFO 127.0.0.1 - - [01/Dec/2025 17:30:59] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:31:01,526 INFO Subprocess returncode: 0
+2025-12-01 17:31:01,526 INFO grafos.py stdout:
+PDF with results written to: C:\Users\camib\Downloads\Ugarte Mineria de Datos\proyecto final\site_data\model_results.pdf
+
+2025-12-01 17:31:01,526 ERROR grafos.py stderr:
+[nltk_data] Downloading package vader_lexicon to
+[nltk_data]     C:\Users\camib\AppData\Roaming\nltk_data...
+[nltk_data]   Package vader_lexicon is already up-to-date!
+
+2025-12-01 17:31:01,527 INFO PDF regeneration finished (flag updated).
+2025-12-01 17:31:01,623 INFO 127.0.0.1 - - [01/Dec/2025 17:31:01] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:35:03,152 INFO Server starting. Static files served from: C:\Users\camib\Downloads\Ugarte Mineria de Datos\proyecto final
+2025-12-01 17:35:03,153 INFO PDF exists and FORCE_REGEN_ON_START not set: not regenerating on startup.
+2025-12-01 17:35:03,174 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.68.111:5000
+2025-12-01 17:35:03,174 INFO [33mPress CTRL+C to quit[0m
+2025-12-01 17:35:07,553 INFO 127.0.0.1 - - [01/Dec/2025 17:35:07] "[36mGET / HTTP/1.1[0m" 304 -
+2025-12-01 17:35:07,570 INFO 127.0.0.1 - - [01/Dec/2025 17:35:07] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-12-01 17:35:07,571 INFO 127.0.0.1 - - [01/Dec/2025 17:35:07] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-12-01 17:35:07,572 INFO 127.0.0.1 - - [01/Dec/2025 17:35:07] "GET /app.js HTTP/1.1" 200 -
+2025-12-01 17:35:07,588 INFO 127.0.0.1 - - [01/Dec/2025 17:35:07] "GET /site_data/movies_with_reviews.json HTTP/1.1" 200 -
+2025-12-01 17:35:07,752 INFO 127.0.0.1 - - [01/Dec/2025 17:35:07] "[36mGET /icono.png HTTP/1.1[0m" 304 -
+2025-12-01 17:35:07,752 INFO 127.0.0.1 - - [01/Dec/2025 17:35:07] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:35:08,410 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "[36mGET / HTTP/1.1[0m" 304 -
+2025-12-01 17:35:08,433 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-12-01 17:35:08,435 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-12-01 17:35:08,436 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "[36mGET /app.js HTTP/1.1[0m" 304 -
+2025-12-01 17:35:08,451 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 17:35:08,519 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:35:08,525 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "[36mGET /icono.png HTTP/1.1[0m" 304 -
+2025-12-01 17:35:08,566 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "[36mGET / HTTP/1.1[0m" 304 -
+2025-12-01 17:35:08,618 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-12-01 17:35:08,621 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-12-01 17:35:08,622 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "[36mGET /app.js HTTP/1.1[0m" 304 -
+2025-12-01 17:35:08,638 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 17:35:08,700 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:35:08,782 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "[36mGET /icono.png HTTP/1.1[0m" 304 -
+2025-12-01 17:35:08,792 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "[36mGET / HTTP/1.1[0m" 304 -
+2025-12-01 17:35:08,817 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-12-01 17:35:08,820 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-12-01 17:35:08,821 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "[36mGET /app.js HTTP/1.1[0m" 304 -
+2025-12-01 17:35:08,830 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 17:35:08,910 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:35:08,916 INFO 127.0.0.1 - - [01/Dec/2025 17:35:08] "[36mGET /icono.png HTTP/1.1[0m" 304 -
+2025-12-01 17:35:10,306 INFO 127.0.0.1 - - [01/Dec/2025 17:35:10] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 17:35:24,459 INFO POST /api/edit_review - movie_index=2 review_id=5469 db_rowid=5469
+2025-12-01 17:35:24,574 INFO Updated review id=5469 in JSON movies index=2, path=site_data\movies_with_reviews.json
+2025-12-01 17:35:24,579 INFO No hay regeneración en curso: se iniciará una nueva tras edición.
+2025-12-01 17:35:24,580 INFO 127.0.0.1 - - [01/Dec/2025 17:35:24] "POST /api/edit_review HTTP/1.1" 200 -
+2025-12-01 17:35:24,580 INFO Starting PDF regeneration (subprocess thread).
+2025-12-01 17:35:24,581 INFO Launching subprocess: C:\Users\camib\AppData\Local\Programs\Python\Python313\python.exe grafos.py
+2025-12-01 17:35:26,593 INFO 127.0.0.1 - - [01/Dec/2025 17:35:26] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:35:28,593 INFO 127.0.0.1 - - [01/Dec/2025 17:35:28] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:35:30,596 INFO 127.0.0.1 - - [01/Dec/2025 17:35:30] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:35:32,598 INFO 127.0.0.1 - - [01/Dec/2025 17:35:32] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:35:34,595 INFO 127.0.0.1 - - [01/Dec/2025 17:35:34] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:35:36,592 INFO 127.0.0.1 - - [01/Dec/2025 17:35:36] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:35:38,593 INFO 127.0.0.1 - - [01/Dec/2025 17:35:38] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:35:40,595 INFO 127.0.0.1 - - [01/Dec/2025 17:35:40] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:35:42,599 INFO 127.0.0.1 - - [01/Dec/2025 17:35:42] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:35:44,596 INFO 127.0.0.1 - - [01/Dec/2025 17:35:44] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:35:46,595 INFO 127.0.0.1 - - [01/Dec/2025 17:35:46] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:35:48,595 INFO 127.0.0.1 - - [01/Dec/2025 17:35:48] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:35:49,847 INFO Subprocess returncode: 0
+2025-12-01 17:35:49,848 INFO grafos.py stdout:
+PDF with results written to: C:\Users\camib\Downloads\Ugarte Mineria de Datos\proyecto final\site_data\model_results.pdf
+
+2025-12-01 17:35:49,848 ERROR grafos.py stderr:
+[nltk_data] Downloading package vader_lexicon to
+[nltk_data]     C:\Users\camib\AppData\Roaming\nltk_data...
+[nltk_data]   Package vader_lexicon is already up-to-date!
+
+2025-12-01 17:35:49,849 INFO PDF regeneration finished (flag updated).
+2025-12-01 17:35:50,597 INFO 127.0.0.1 - - [01/Dec/2025 17:35:50] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:35:54,633 INFO 127.0.0.1 - - [01/Dec/2025 17:35:54] "GET /site_data/model_results.pdf?v=2025-12-01T23:35:49.178447 HTTP/1.1" 200 -
+2025-12-01 17:36:07,485 INFO 127.0.0.1 - - [01/Dec/2025 17:36:07] "GET /site_data/model_results.pdf?v=2025-12-01T23:35:49.178447 HTTP/1.1" 200 -
+2025-12-01 17:36:25,592 INFO 127.0.0.1 - - [01/Dec/2025 17:36:25] "[36mGET / HTTP/1.1[0m" 304 -
+2025-12-01 17:36:25,610 INFO 127.0.0.1 - - [01/Dec/2025 17:36:25] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-12-01 17:36:25,612 INFO 127.0.0.1 - - [01/Dec/2025 17:36:25] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-12-01 17:36:25,613 INFO 127.0.0.1 - - [01/Dec/2025 17:36:25] "[36mGET /app.js HTTP/1.1[0m" 304 -
+2025-12-01 17:36:25,620 INFO 127.0.0.1 - - [01/Dec/2025 17:36:25] "GET /site_data/movies_with_reviews.json HTTP/1.1" 200 -
+2025-12-01 17:36:25,692 INFO 127.0.0.1 - - [01/Dec/2025 17:36:25] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:36:25,693 INFO 127.0.0.1 - - [01/Dec/2025 17:36:25] "[36mGET /icono.png HTTP/1.1[0m" 304 -
+2025-12-01 17:36:27,169 INFO 127.0.0.1 - - [01/Dec/2025 17:36:27] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 17:36:31,924 INFO 127.0.0.1 - - [01/Dec/2025 17:36:31] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 17:36:39,299 INFO 127.0.0.1 - - [01/Dec/2025 17:36:39] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 17:36:55,489 INFO 127.0.0.1 - - [01/Dec/2025 17:36:55] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 17:47:01,394 INFO 127.0.0.1 - - [01/Dec/2025 17:47:01] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 200 -
+2025-12-01 17:47:01,394 INFO 127.0.0.1 - - [01/Dec/2025 17:47:01] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-12-01 17:47:02,854 INFO 127.0.0.1 - - [01/Dec/2025 17:47:02] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 17:54:13,067 INFO 127.0.0.1 - - [01/Dec/2025 17:54:13] "[36mGET / HTTP/1.1[0m" 304 -
+2025-12-01 17:54:13,103 INFO 127.0.0.1 - - [01/Dec/2025 17:54:13] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-12-01 17:54:13,109 INFO 127.0.0.1 - - [01/Dec/2025 17:54:13] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-12-01 17:54:13,113 INFO 127.0.0.1 - - [01/Dec/2025 17:54:13] "[36mGET /app.js HTTP/1.1[0m" 304 -
+2025-12-01 17:54:13,130 INFO 127.0.0.1 - - [01/Dec/2025 17:54:13] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 17:54:13,154 INFO 127.0.0.1 - - [01/Dec/2025 17:54:13] "[36mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 304 -
+2025-12-01 17:54:13,347 INFO 127.0.0.1 - - [01/Dec/2025 17:54:13] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 17:54:13,352 INFO 127.0.0.1 - - [01/Dec/2025 17:54:13] "[36mGET /icono.png HTTP/1.1[0m" 304 -
+2025-12-01 17:54:15,442 INFO 127.0.0.1 - - [01/Dec/2025 17:54:15] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 18:02:39,960 INFO 127.0.0.1 - - [01/Dec/2025 18:02:39] "[36mGET / HTTP/1.1[0m" 304 -
+2025-12-01 18:02:40,008 INFO 127.0.0.1 - - [01/Dec/2025 18:02:40] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-12-01 18:02:40,017 INFO 127.0.0.1 - - [01/Dec/2025 18:02:40] "[36mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 304 -
+2025-12-01 18:02:40,019 INFO 127.0.0.1 - - [01/Dec/2025 18:02:40] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-12-01 18:02:40,020 INFO 127.0.0.1 - - [01/Dec/2025 18:02:40] "GET /app.js HTTP/1.1" 200 -
+2025-12-01 18:02:40,044 INFO 127.0.0.1 - - [01/Dec/2025 18:02:40] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 18:02:40,269 INFO 127.0.0.1 - - [01/Dec/2025 18:02:40] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 18:02:40,274 INFO 127.0.0.1 - - [01/Dec/2025 18:02:40] "[36mGET /icono.png HTTP/1.1[0m" 304 -
+2025-12-01 18:02:42,061 INFO 127.0.0.1 - - [01/Dec/2025 18:02:42] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 18:04:19,563 INFO 127.0.0.1 - - [01/Dec/2025 18:04:19] "[36mGET / HTTP/1.1[0m" 304 -
+2025-12-01 18:04:19,613 INFO 127.0.0.1 - - [01/Dec/2025 18:04:19] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-12-01 18:04:19,617 INFO 127.0.0.1 - - [01/Dec/2025 18:04:19] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-12-01 18:04:19,618 INFO 127.0.0.1 - - [01/Dec/2025 18:04:19] "GET /app.js HTTP/1.1" 200 -
+2025-12-01 18:04:19,624 INFO 127.0.0.1 - - [01/Dec/2025 18:04:19] "[36mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 304 -
+2025-12-01 18:04:19,642 INFO 127.0.0.1 - - [01/Dec/2025 18:04:19] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 18:04:19,851 INFO 127.0.0.1 - - [01/Dec/2025 18:04:19] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 18:04:19,867 INFO 127.0.0.1 - - [01/Dec/2025 18:04:19] "[36mGET /icono.png HTTP/1.1[0m" 304 -
+2025-12-01 18:04:21,229 INFO 127.0.0.1 - - [01/Dec/2025 18:04:21] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 18:07:42,276 INFO 127.0.0.1 - - [01/Dec/2025 18:07:42] "[36mGET / HTTP/1.1[0m" 304 -
+2025-12-01 18:07:42,293 INFO 127.0.0.1 - - [01/Dec/2025 18:07:42] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-12-01 18:07:42,300 INFO 127.0.0.1 - - [01/Dec/2025 18:07:42] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-12-01 18:07:42,301 INFO 127.0.0.1 - - [01/Dec/2025 18:07:42] "[36mGET /app.js HTTP/1.1[0m" 304 -
+2025-12-01 18:07:42,321 INFO 127.0.0.1 - - [01/Dec/2025 18:07:42] "[36mGET /site_data/movies_with_reviews.json HTTP/1.1[0m" 304 -
+2025-12-01 18:07:42,492 INFO 127.0.0.1 - - [01/Dec/2025 18:07:42] "GET /api/pdf_status HTTP/1.1" 200 -
+2025-12-01 18:07:42,545 INFO 127.0.0.1 - - [01/Dec/2025 18:07:42] "[36mGET /icono.png HTTP/1.1[0m" 304 -
