@@ -1,12 +1,5 @@
-```markdown
-# Minería de Datos (mineriadedatos)
-
-Breve: material del proyecto de minería de datos — limpieza, EDA, modelado y visualización.
-
-Badges: (opcional) build | python version | license
-
-## ¿Qué hace este repo?
-Proyecto con análisis y modelos sobre un dataset para explorar/predicción de [variable objetivo]. Incluye notebooks, scripts y un servidor simple para interactuar con resultados.
+# Proyecto con análisis y modelos sobre un dataset para explorar/predicción de [variable objetivo]. 
+Incluye notebooks, scripts y un servidor simple para interactuar con resultados.
 
 ## Estructura (ejemplo)
 /
