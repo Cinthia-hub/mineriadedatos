@@ -1,5 +1,7 @@
 # Proyecto con análisis y modelos sobre un dataset para exploración/predicción.
-Incluye notebooks, scripts y un servidor simple para interactuar con resultados.
+-  Es una pequeña aplicación para explorar un dataset de películas (estilo Kaggle IMDB) y gestionar/visualizar reseñas de usuarios.
+-  Soporta tanto UI estática (HTML/CSS/JS) como backend en Flask que persiste reseñas en SQLite, actualiza un JSON de películas con reseñas y regenera un PDF con análisis/visualizaciones.
+-  También incluye utilidades para preparar el dataset desde Kaggle, combinar reseñas desde la BD/JSON y una app Streamlit alternativa para ver películas que tienen reseñas en la BD.
 
 ## Requisitos e instalación
 Se recomienda usar entorno virtual.
