@@ -92,7 +92,7 @@ body{
 /* Si no hay imagen válida, usamos este estilo (placeholder) */
 .poster.no-poster{
   /* keep gradient as visual fallback */
-  background-image: url(./movie.png);
+  background-image: url(./assets/movie.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -339,7 +339,7 @@ body{
 /* Si no hay imagen válida, usamos este estilo (placeholder) */
 .poster.no-poster{
   /* keep gradient as visual fallback */
-  background-image: url(./movie.png);
+  background-image: url(./assets/movie.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -577,7 +577,7 @@ body{
 /* Si no hay imagen válida, usamos este estilo (placeholder) */
 .poster.no-poster{
   /* keep gradient as visual fallback */
-  background-image: url(./movie.png);
+  background-image: url(./assets/movie.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;

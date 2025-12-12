@@ -1,5 +1,6 @@
 // app.js - UI completo con edición usando el mismo formulario existente (no se crea uno nuevo)
-// Añadida función para recargar reseñas desde site_data/movies_with_reviews.json y botón en el modal.
+// Modificado para mostrar la etiqueta de polaridad (sentiment) inmediatamente cuando el servidor la devuelve,
+// y para importar/mostrar sentiment desde site_data/*.json cuando existe.
 const PREFERRED_PATH = "site_data/movies_with_reviews.json";
 const FALLBACK_PATH = "site_data/movies.json";
 const PDF_PATH = "site_data/model_results.pdf";
@@ -30,7 +31,7 @@ const confirmMessageEl = document.getElementById("confirm-message");
 const confirmCancelBtn = document.getElementById("confirm-cancel");
 const confirmOkBtn = document.getElementById("confirm-ok");
 
-let userReviews = {}; // estructura: { movieKey: [ {id, author, rating, review, ts, db_rowid?} ] }
+let userReviews = {}; // estructura: { movieKey: [ {id, author, rating, review, ts, db_rowid?, sentiment?, sentiment_compound?} ] }
 let currentEdit = null; // { userKey, reviewId, db_rowid, movie_index } o null
 
 // state for confirm modal callback
@@ -248,7 +249,7 @@ fetchData().then(d => {
             review: r.review || r.REVIEW || "",
             ts: ts,
             db_rowid: id || r.db_rowid || null,
-            // New: include sentiment fields if server provided them
+            // include sentiment fields if server provided them
             sentiment: r.sentiment || null,
             sentiment_compound: (r.sentiment_compound != null ? Number(r.sentiment_compound) : null)
           };
@@ -596,6 +597,7 @@ function openModalWithMovie(m){
   const reloadBtn = document.createElement("button");
   reloadBtn.className = "btn btn-ghost";
   reloadBtn.style.marginLeft = "8px";
+  reloadBtn.textContent = "Recargar reseñas (servidor)";
   reloadBtn.addEventListener("click", () => {
     showNotice("Recargando reseñas desde el servidor...", "info", 1400);
     importServerReviewsForMovie(m).then(ok => {
@@ -626,7 +628,7 @@ function openModalWithMovie(m){
     const uh = document.createElement("div"); uh.className="review-header";
     const ut = document.createElement("div"); ut.textContent = "Tus reseñas (local + servidor)"; ut.style.fontWeight="700"; uh.appendChild(ut); userSection.appendChild(uh);
 
-    const listContainer = document.createElement("div"); listContainer.id="user-review-list";
+    const listContainer = document.createElement("div"); listContainer.id = "user-review-list";
     const existing = (userReviews[userKey] || []);
     if (existing.length === 0){
       const p = document.createElement("div"); p.className="review-body"; p.textContent="(No has añadido reseñas para esta película aún)"; listContainer.appendChild(p);
@@ -648,9 +650,9 @@ function openModalWithMovie(m){
 
     const ta = document.createElement("textarea"); ta.placeholder="Escribe tu reseña aquí..."; ta.id="user-review-text"; form.appendChild(ta);
 
-    const formRow = document.createElement("div"); formRow.className="row";
-    const saveBtn = document.createElement("button"); saveBtn.className="btn btn-primary"; saveBtn.textContent="Guardar reseña";
-    const clearBtn = document.createElement("button"); clearBtn.className="btn btn-ghost"; clearBtn.textContent="Limpiar formulario";
+    const formRow = document.createElement("div"); formRow.className = "row";
+    const saveBtn = document.createElement("button"); saveBtn.className = "btn btn-primary"; saveBtn.textContent = "Guardar reseña";
+    const clearBtn = document.createElement("button"); clearBtn.className = "btn btn-ghost"; clearBtn.textContent = "Limpiar formulario";
 
     // Save handler: if currentEdit -> edit flow; else -> add flow
     saveBtn.addEventListener("click", () => {
@@ -688,6 +690,9 @@ function openModalWithMovie(m){
               arr[idx].rating = rating;
               arr[idx].review = reviewText;
               arr[idx].ts = new Date().toISOString();
+              // NEW: accept sentiment returned by server so UI updates immediately
+              if (js.sentiment) arr[idx].sentiment = js.sentiment;
+              if (js.sentiment_compound != null) arr[idx].sentiment_compound = Number(js.sentiment_compound);
             }
             userReviews[currentEdit.userKey] = arr;
             saveUserReviews();
@@ -784,6 +789,10 @@ function openModalWithMovie(m){
             if (js && js.ok) {
               const rowid = js.rowid || js.id || null;
               const newRev = { id: rowid || provisional.id, db_rowid: rowid || null, author, rating, review: reviewText, ts: new Date().toISOString() };
+              // NEW: if server returned sentiment, add it immediately so badge shows
+              if (js.sentiment) newRev.sentiment = js.sentiment;
+              if (js.sentiment_compound != null) newRev.sentiment_compound = Number(js.sentiment_compound);
+
               userReviews[key] = userReviews[key] || [];
               userReviews[key].push(newRev);
               saveUserReviews();

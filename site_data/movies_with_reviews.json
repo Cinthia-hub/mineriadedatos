@@ -92,16 +92,6 @@
         "sentiment_compound": 0.9999
       },
       {
-        "id": 5461,
-        "author": "Sir",
-        "rating": 10.0,
-        "review": "I like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like like this movie.",
-        "posted": "2025-11-27T02:03:21.150255",
-        "db_rowid": 5461,
-        "sentiment": "positive",
-        "sentiment_compound": 0.9999
-      },
-      {
         "id": 5465,
         "author": "Chacha",
         "rating": 10.0,
@@ -120,6 +110,26 @@
         "db_rowid": 5468,
         "sentiment": "positive",
         "sentiment_compound": 0.9999
+      },
+      {
+        "id": 5479,
+        "author": "Dario",
+        "rating": 3.0,
+        "review": "This is awful movie.",
+        "posted": "2025-12-02T18:44:24.468496",
+        "db_rowid": 5479,
+        "sentiment": "negative",
+        "sentiment_compound": -0.4588
+      },
+      {
+        "id": 5480,
+        "author": "Señor",
+        "rating": 8.0,
+        "review": "This is a good movie",
+        "posted": "2025-12-12T03:35:39.774121",
+        "db_rowid": 5480,
+        "sentiment": "positive",
+        "sentiment_compound": 0.4404
       }
     ]
   },
@@ -161,10 +171,10 @@
     "user_reviews": [
       {
         "id": 5469,
-        "author": "Señor",
+        "author": "Señor3",
         "rating": 2.0,
         "review": "It is a bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad bad movie.",
-        "posted": "2025-12-01T23:35:24.503681",
+        "posted": "2025-12-02T00:44:45.669734",
         "db_rowid": 5469,
         "sentiment": "negative",
         "sentiment_compound": -0.9999
@@ -206,7 +216,18 @@
       "sentiment": "negative",
       "sentiment_compound": -0.0772
     },
-    "user_reviews": []
+    "user_reviews": [
+      {
+        "id": 5478,
+        "author": "Don Carmelo",
+        "rating": 8.0,
+        "review": "This movie is cool",
+        "posted": "2025-12-02T17:34:36.257081",
+        "db_rowid": 5478,
+        "sentiment": "positive",
+        "sentiment_compound": 0.3182
+      }
+    ]
   },
   {
     "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMWU4N2FjNzYtNTVkNC00NzQ0LTg0MjAtYTJlMjFhNGUxZDFmXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_UX67_CR0,0,67,98_AL_.jpg",
@@ -255,14 +276,34 @@
         "sentiment_compound": -0.9999
       },
       {
-        "id": 5471,
-        "author": "Señor",
-        "rating": 2.0,
+        "id": 5473,
+        "author": "Señor2",
+        "rating": 10.0,
         "review": "This is an awful movie.",
-        "posted": "2025-11-27T06:54:31.640500",
-        "db_rowid": 5471,
+        "posted": "2025-12-02T01:01:14.934629",
+        "db_rowid": 5473,
         "sentiment": "negative",
         "sentiment_compound": -0.4588
+      },
+      {
+        "id": 5474,
+        "author": "Señor",
+        "rating": 10.0,
+        "review": "I like this movie.",
+        "posted": "2025-12-02T00:56:21.164868",
+        "db_rowid": 5474,
+        "sentiment": "positive",
+        "sentiment_compound": 0.3612
+      },
+      {
+        "id": 5475,
+        "author": "Señor3",
+        "rating": 6.0,
+        "review": "It is a good movie.",
+        "posted": "2025-12-02T01:01:35.745297",
+        "db_rowid": 5475,
+        "sentiment": "positive",
+        "sentiment_compound": 0.4404
       }
     ]
   },
@@ -11102,7 +11143,19 @@
       "review": "The plot could be good if reasonably written, the whole script is meant to be a psychological thriller but it is missing the right scale, how can you miss something if you never had it.Also how to get over many years of hormones in a couple of days when you never really felt them...\nPity such a loss of time and money.",
       "sentiment": "negative",
       "sentiment_compound": -0.8269
-    }
+    },
+    "user_reviews": [
+      {
+        "id": 5477,
+        "author": "Señor",
+        "rating": 5.0,
+        "review": "This movie wasn't interesting.",
+        "posted": "2025-12-02T02:18:09.669486",
+        "db_rowid": 5477,
+        "sentiment": "negative",
+        "sentiment_compound": -0.3089
+      }
+    ]
   },
   {
     "Poster_Link": "https://m.media-amazon.com/images/M/MV5BZDdkNzMwZmUtY2Q5MS00ZmM2LWJhYjItYTBjMWY0MGM4MDRjXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_UY98_CR0,0,67,98_AL_.jpg",

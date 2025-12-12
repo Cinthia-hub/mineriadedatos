@@ -29,6 +29,10 @@ import sys
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 
+# NLTK sentiment
+import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
 APP = Flask(__name__, static_folder=None)
 CORS(APP)
 
@@ -60,6 +64,50 @@ _regen_flag = {"running": False, "started_at": None, "last_error": None}
 # File lock for JSON edits
 _file_lock = threading.Lock()
 
+# ----------------------------
+# NLTK helpers for quick sentiment (used to return sentiment immediately)
+# ----------------------------
+def ensure_nltk_resources():
+    resources = ['punkt', 'stopwords', 'vader_lexicon']
+    for res in resources:
+        try:
+            if res == 'punkt':
+                nltk.data.find('tokenizers/punkt')
+            elif res == 'stopwords':
+                nltk.data.find('corpora/stopwords')
+            elif res == 'vader_lexicon':
+                nltk.data.find('sentiment/vader_lexicon')
+        except LookupError:
+            try:
+                nltk.download(res)
+            except Exception:
+                logger.warning(f"Could not download NLTK resource: {res}")
+
+ensure_nltk_resources()
+try:
+    _SIA = SentimentIntensityAnalyzer()
+except Exception:
+    _SIA = None
+    logger.warning("VADER SentimentIntensityAnalyzer not available; sentiment will be omitted.")
+
+def compute_sentiment(text):
+    """
+    Return tuple (label, compound_score) or (None, None) if not available.
+    Labels are 'positive'|'neutral'|'negative' using the same thresholds as grafos.py.
+    """
+    try:
+        if _SIA is None:
+            return None, None
+        sc = _SIA.polarity_scores(str(text)).get('compound', 0.0)
+        if sc >= 0.05:
+            lab = 'positive'
+        elif sc <= -0.05:
+            lab = 'negative'
+        else:
+            lab = 'neutral'
+        return lab, float(sc)
+    except Exception:
+        return None, None
 
 # ----------------------------
 # DB helpers (ensure table & insert/delete/update)
@@ -285,6 +333,14 @@ def update_review_in_movies_json(movie_index: int, review_id, updates: dict):
                         r["rating"] = float(updates["rating"]) if updates["rating"] is not None else None
                     except Exception:
                         r["rating"] = updates["rating"]
+                # NEW: support sentiment fields passed in updates
+                if "sentiment" in updates:
+                    r["sentiment"] = updates["sentiment"]
+                if "sentiment_compound" in updates:
+                    try:
+                        r["sentiment_compound"] = float(updates["sentiment_compound"]) if updates["sentiment_compound"] is not None else None
+                    except Exception:
+                        r["sentiment_compound"] = updates["sentiment_compound"]
                 # actualizar posted para indicar edición
                 r["posted"] = datetime.utcnow().isoformat()
                 found = True
@@ -373,8 +429,12 @@ def api_add_review():
 
     json_added = False
     json_error = None
+    sentiment = None
+    sentiment_compound = None
     if movie_index is not None:
         try:
+            # compute sentiment immediately (so UI can show it)
+            sentiment, sentiment_compound = compute_sentiment(review)
             rev_obj = {
                 "id": rowid,
                 "author": author,
@@ -383,6 +443,11 @@ def api_add_review():
                 "posted": datetime.utcnow().isoformat(),
                 "db_rowid": rowid
             }
+            if sentiment is not None:
+                rev_obj["sentiment"] = sentiment
+            if sentiment_compound is not None:
+                rev_obj["sentiment_compound"] = sentiment_compound
+
             ok, err = add_review_to_movies_json(int(movie_index), rev_obj)
             json_added = ok
             json_error = err
@@ -406,6 +471,11 @@ def api_add_review():
     resp = {"ok": True, "rowid": rowid, "regeneration_started": started, "json_added": json_added}
     if json_error:
         resp["json_error"] = json_error
+    # include immediate sentiment if available
+    if sentiment is not None:
+        resp["sentiment"] = sentiment
+    if sentiment_compound is not None:
+        resp["sentiment_compound"] = sentiment_compound
     return jsonify(resp)
 
 
@@ -495,11 +565,20 @@ def api_edit_review():
 
     json_ok = False
     json_err = None
+    sentiment = None
+    sentiment_compound = None
     try:
         updates = {}
         if author is not None: updates["author"] = author
         if review_text is not None: updates["review"] = review_text
         if rating is not None: updates["rating"] = rating
+        # compute sentiment when review text is changed so UI can show it immediately
+        if review_text is not None:
+            sentiment, sentiment_compound = compute_sentiment(review_text)
+            if sentiment is not None:
+                updates["sentiment"] = sentiment
+            if sentiment_compound is not None:
+                updates["sentiment_compound"] = sentiment_compound
         json_ok, json_err = update_review_in_movies_json(int(movie_index), review_id, updates)
         if not json_ok:
             logger.warning(f"Could not update movies JSON: {json_err}")
@@ -539,6 +618,11 @@ def api_edit_review():
         resp["json_err"] = json_err
     if db_err:
         resp["db_err"] = db_err
+    # include immediate sentiment if computed
+    if sentiment is not None:
+        resp["sentiment"] = sentiment
+    if sentiment_compound is not None:
+        resp["sentiment_compound"] = sentiment_compound
     return jsonify(resp)
 
 
